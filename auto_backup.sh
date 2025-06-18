@@ -24,7 +24,7 @@ else
 fi
 
 #---Delete Old Backups---
-backup_counts=`find  -name "backup_*.tar.gz" -mtime ${DAYS_TO_KEEP} |wc -l`
+backup_counts=`find "${BACKUP_DIR}" -name "backup_*.tar.gz" -mtime ${DAYS_TO_KEEP} |wc -l`
 if [ "${backup_counts}" -gt 5 ];then
 
         find "${BACKUP_DIR}" -name "backup_*.tar.gz" -mtime ${DAYS_TO_KEEP} -exec rm -f {} \;
